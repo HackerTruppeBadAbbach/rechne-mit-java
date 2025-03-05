@@ -12,14 +12,14 @@ public class ExampleResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String mal(float y, float z) {
         double x=y*z;
-        return "Hello from Quarkus REST "+x;
+        return "Ergebnis von "+y+" mal "+z+" ist: "+x;
     }
     @Path("/{y}plus{z}")
     @GET()
     @Produces(MediaType.TEXT_PLAIN)
     public String plus(float y, float z) {
         double x=y+z;
-        return "Hello from Quarkus REST "+x;
+        return "Ergebnis von "+y+" plus "+z+" ist: "+x;
     }
 
 }
