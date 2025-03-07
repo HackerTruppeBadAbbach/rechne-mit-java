@@ -9,10 +9,13 @@ import jakarta.ws.rs.core.MediaType;
 public class ExampleResource {
     @Path("/{y}mal{z}")
     @GET()
-    @Produces(MediaType.TEXT_PLAIN)
-    public String mal(float y, float z) {
-        double x=y*z;
-        return "Ergebnis von "+y+" mal "+z+" ist: "+x;
+    @Produces(MediaType.TEXT_HTML)
+    public String mal(long y, long z) {
+        long x=y*z;
+       
+        //return "Ergebnis von "+y+" mal "+z+" ist: "+String.format("%,d", x);
+        return "<html><body><h1>Ergebnis von "+y+" mal "+z+" ist: "+String.format("%,d", x)+"</h1></body></html>";
+
     }
     @Path("/{y}plus{z}")
     @GET()
